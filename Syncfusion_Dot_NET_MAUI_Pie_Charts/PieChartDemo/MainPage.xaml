@@ -1,0 +1,34 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Charts.MainPage"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts" 
+             xmlns:viewModel ="clr-namespace:Charts.ViewModel"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <Grid HorizontalOptions="FillAndExpand" Padding="20" BackgroundColor="White" VerticalOptions="FillAndExpand">
+        <chart:SfCircularChart>
+            <chart:SfCircularChart.BindingContext>
+                <viewModel:ViewModel/>
+            </chart:SfCircularChart.BindingContext>
+            <chart:SfCircularChart.Legend>
+                <chart:ChartLegend Placement="Right" />
+            </chart:SfCircularChart.Legend>
+            <chart:SfCircularChart.Title>
+                <Label Text="Rural population of various countries" FontSize="Large" Margin="5,10,5,10" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"></Label>
+            </chart:SfCircularChart.Title>
+            <chart:SfCircularChart.Series>
+                <chart:PieSeries ItemsSource="{Binding Data}" ShowDataLabels="True" Palette="Custom" CustomBrushes="{Binding CustomBrushes}"
+                                    XBindingPath="Country" 
+                                    YBindingPath="Counts">
+                    <chart:PieSeries.DataLabelSettings>
+                        <chart:CircularDataLabelSettings>
+                            <chart:CircularDataLabelSettings.LabelStyle>
+                                <chart:ChartDataLabelStyle LabelFormat="0'%"/>
+                            </chart:CircularDataLabelSettings.LabelStyle>
+                        </chart:CircularDataLabelSettings>
+                    </chart:PieSeries.DataLabelSettings>
+                </chart:PieSeries>
+            </chart:SfCircularChart.Series>
+        </chart:SfCircularChart>
+    </Grid>
+</ContentPage>
