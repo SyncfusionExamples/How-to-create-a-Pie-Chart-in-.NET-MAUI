@@ -14,7 +14,7 @@
                 <chart:ChartLegend Placement="Right" />
             </chart:SfCircularChart.Legend>
             <chart:SfCircularChart.Title>
-                <Label Text="Rural population of various countries" FontSize="Large" Margin="5,10,5,10" HorizontalTextAlignment="Center" HorizontalOptions="Fill"></Label>
+                <Label Text="Rural population of various countries" FontSize="Large" Margin="5,10,5,10" HorizontalTextAlignment="Center" HorizontalOptions="Fill" TextColor="#5934e0"></Label>
             </chart:SfCircularChart.Title>
             <chart:SfCircularChart.Series>
                 <chart:PieSeries ItemsSource="{Binding Data}" ShowDataLabels="True" PaletteBrushes="{Binding CustomBrushes}"
